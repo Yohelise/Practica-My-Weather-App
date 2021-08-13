@@ -1,0 +1,21 @@
+.main__container{
+    width: 850px;
+    /* display: flex;
+    flex-direction: row; */
+    background-color: #F7F6F9;
+    margin:auto;
+    padding-bottom: 100px;
+    height: 500px;
+    padding-left: 0.2rem;
+    padding-right: 1rem;
+
+
+}
+.cards__container{
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+
+}
