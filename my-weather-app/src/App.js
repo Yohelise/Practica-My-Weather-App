@@ -1,14 +1,12 @@
 import './App.css';
 import BigWeatherCard from './Big-weather-card';
 import ComponentWeek from './ComoponentWeek'
+import MainViewLower from './pages/main-view-lower';
 function App() {
   return (
-    <div className="app_container">
-    <div className= "total-container">
-    <BigWeatherCard></BigWeatherCard>
-    <div className="main-view"></div>
-    <ComponentWeek></ComponentWeek>
-    <div className="medium-weather-card"></div>
+    <div >
+      <ComponentWeek></ComponentWeek>
+      <MainViewLower></MainViewLower>
     </div>
 
   </div>
