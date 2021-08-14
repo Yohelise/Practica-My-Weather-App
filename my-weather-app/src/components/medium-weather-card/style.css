@@ -3,9 +3,11 @@
     flex-direction: column;
     width: 230.6px;
     height: 200px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     background-color: #FFFFFF;
     border-radius: 20px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin: 0.5rem;
 

@@ -1,7 +1,7 @@
 import './App.css';
 import BigWeatherCard from './Big-weather-card';
 import ComponentWeek from './ComoponentWeek'
-import MainViewLower from './pages/main-view-lower';
+
 function App() {
   return (
     <div className="main_container">
@@ -12,6 +12,7 @@ function App() {
 
     </div>
 
+    // this is a test MSG
 
   );
 }
