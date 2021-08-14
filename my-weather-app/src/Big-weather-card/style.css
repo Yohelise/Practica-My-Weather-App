@@ -49,7 +49,7 @@
 .content-container {
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: left;
     margin-left: 4vh;
 }
 
