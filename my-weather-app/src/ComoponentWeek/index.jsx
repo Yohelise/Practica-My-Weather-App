@@ -6,7 +6,7 @@ function ComponentWeek(){
     return(
 
         <div className="container-week">
-            <h4>Week</h4>
+            <p className="title-week">Week</p>
             <button className=" btn-gnral btn-celcius">ºC</button>
             <button className=" btn-gnral btn-Farighein">ºF</button>
             

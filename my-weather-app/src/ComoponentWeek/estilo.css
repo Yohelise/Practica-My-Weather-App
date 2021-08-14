@@ -1,43 +1,68 @@
 .container-week{
-    height: 450px;
+    max-width: 850px;
+    min-width: 550;
+    background-color: #F7F6F9;
+     min-height:550px;
+     margin: 25px;
+     border-radius: 30px;
+     padding: 10px;
+
+}
+.title-week{
+    text-decoration: underline;
+    text-align: left;
+    margin-right: 60%;
+    font-size: 1.5rem;
+    display: inline-block;
+   margin-left: 20px;
+
+
 }
 .btn-gnral{
     border-radius: 60%;
     border: none;
     padding: 10px;
-    
+    margin: 5px; 
+ 
 }
 .btn-celcius{
-    background-color: rgb(0, 0, 0);
-    color: white;
-    margin: 5px;
+    background-color: #1A1A1A;
+    color: white ;
+   
 }
 .btn-Farighein{
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
+    padding: 12px;
 }
 .container-Card-Week{
-    width: 100%;
+    padding: 10;
+    margin: 10px;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: 450px;
+    max-width: 650;
+
 
 }
 .container-sun{
-    font-size: 0.8rem;
-    margin: 5px;
-    padding: 5px;
-    width: 120px;
-    height: 150px;
-    background-color: rgb(232, 232, 232);
+    font-size: 0.9rem;
+    margin: 2px;
+    width: 100px;
+    height: 120px;
+    background-color: #FFFFFF;
     text-align: center;
     border-radius: 20px;
 
 }
 .img-sun{
     margin: 0 auto;
-    width: 70px;
+    width: 60px;
     text-align: center;
 }
 .spam-styl{
     color: rgb(177, 177, 177);
+}
+.container-sun >p{
+ margin: 5px;
 }
