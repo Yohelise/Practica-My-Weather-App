@@ -1,11 +1,11 @@
 .container-week{
-    max-width: 850px;
-    min-width: 550;
+    width:800px;
     background-color: #F7F6F9;
      min-height:550px;
-     margin: 25px;
-     border-radius: 30px;
+     border-top-right-radius: 30px;
+     border-bottom-right-radius: 30px;
      padding: 10px;
+
 
 }
 .title-week{
@@ -40,7 +40,7 @@
     margin: 10px;
     display: flex;
     flex-wrap: wrap;
-    min-height: 450px;
+    height: 180px;
     max-width: 650;
 
 

@@ -1,6 +1,7 @@
 import sum from '../asset/sun.png'
 import './estilo.css'
 import SmallWeatherCard from '../components/small-weather-card';
+import MainViewLower from '../pages/main-view-lower';
 
 function ComponentWeek() {
     /**
@@ -45,6 +46,7 @@ function ComponentWeek() {
 
                 <SmallWeatherCard day={testDay} src={testSrc} maxTemp={testMax} minTemp={testMin}></SmallWeatherCard>
             </div>
+            <MainViewLower className='right_panel_lower_view'></MainViewLower>
         </div>
     );
 }

@@ -5,12 +5,11 @@ import MainViewLower from './pages/main-view-lower';
 function App() {
   return (
     <div className="main_container">
-      <BigWeatherCard className='left_panel'></BigWeatherCard>
-      <div className='right_panel'>
-        <ComponentWeek className='right_panel_upper_view'></ComponentWeek>
-        <MainViewLower className='right_panel_lower_view'></MainViewLower>
 
-      </div>
+      <BigWeatherCard className='left_panel'></BigWeatherCard>
+
+      <ComponentWeek className='right_panel'></ComponentWeek>
+
     </div>
 
 

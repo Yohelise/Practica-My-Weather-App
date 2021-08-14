@@ -3,19 +3,18 @@
     display:grid;
 
     grid-template-areas: 
-    "main lateralUp"
-    "main lateralDown"
+    "main lateral"
     ;
-
+    width: 1100px;
+    margin:auto;
+    border: 30px gray;
+    
 
 }
-
 .left_panel{
-    grid-area: main;
+    grid-area: main;   
 }
-.right_panel_upper_view{
-    grid-area: lateralUp;
+.right_panel{
+    grid-area: lateral;   
 }
-.right_panel_lower_view{
-    grid-area: lateralDown;
-}
+

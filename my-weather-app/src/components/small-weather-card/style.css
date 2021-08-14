@@ -10,12 +10,10 @@
         border-radius: 20px;
 
 }
-.card_day{
-    padding-top: 0.5rem;
-}
+
 .card_img{
     margin: 0 auto;
-    padding-top: 0.5rem;
+
     width: 70px;
     text-align: center;
     justify-content: baseline;
@@ -25,5 +23,5 @@
     color: rgb(177, 177, 177);
 }
 .card_text{
-    padding-top: 0.5rem;
+
 }

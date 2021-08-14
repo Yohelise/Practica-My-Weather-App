@@ -1,8 +1,7 @@
 .container{
     display: flex;
     flex-direction: column;
-    min-width: 250px;
-    width: 250px;
+    width: 230.6px;
     height: 200px;
     background-color: #FFFFFF;
     border-radius: 20px;
