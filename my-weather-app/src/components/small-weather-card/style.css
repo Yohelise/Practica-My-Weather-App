@@ -1,0 +1,29 @@
+.small_card{
+
+        font-size: 0.8rem;
+        margin: 2px;
+        padding: 5px;
+        width: 100px;
+        height: 120px;
+        background-color: rgb(232, 232, 232);
+        text-align: center;
+        border-radius: 20px;
+
+}
+.card_day{
+    padding-top: 0.5rem;
+}
+.card_img{
+    margin: 0 auto;
+    padding-top: 0.5rem;
+    width: 70px;
+    text-align: center;
+    justify-content: baseline;
+}
+.min_temp{
+    
+    color: rgb(177, 177, 177);
+}
+.card_text{
+    padding-top: 0.5rem;
+}

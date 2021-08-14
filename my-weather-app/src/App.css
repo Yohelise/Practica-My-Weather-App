@@ -1,0 +1,21 @@
+.main_container{
+
+    display:grid;
+
+    grid-template-areas: 
+    "main lateralUp"
+    "main lateralDown"
+    ;
+
+
+}
+
+.left_panel{
+    grid-area: main;
+}
+.right_panel_upper_view{
+    grid-area: lateralUp;
+}
+.right_panel_lower_view{
+    grid-area: lateralDown;
+}

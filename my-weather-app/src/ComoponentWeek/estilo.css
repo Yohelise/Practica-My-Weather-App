@@ -22,22 +22,5 @@
     flex-direction: row;
 
 }
-.container-sun{
-    font-size: 0.8rem;
-    margin: 5px;
-    padding: 5px;
-    width: 120px;
-    height: 150px;
-    background-color: rgb(232, 232, 232);
-    text-align: center;
-    border-radius: 20px;
 
-}
-.img-sun{
-    margin: 0 auto;
-    width: 70px;
-    text-align: center;
-}
-.spam-styl{
-    color: rgb(177, 177, 177);
-}
+

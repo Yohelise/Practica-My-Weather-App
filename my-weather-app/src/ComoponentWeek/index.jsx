@@ -1,58 +1,51 @@
 import sum from '../asset/sun.png'
 import './estilo.css'
+import SmallWeatherCard from '../components/small-weather-card';
 
-function ComponentWeek(){
+function ComponentWeek() {
+    /**
+     * SMALLWEATHERCARD ---PROPS:
+     * 
+     * day -> week day for the card
+     * src -> path to weather image
+     * maxTemp -> max temperature for that day
+     * minTemp -> min temperature for that day
+     */
 
-    return(
+    let testDay = 'Mon'
+    let testSrc = sum;
+    let testMax = '15º'
+    let testMin = '-2º'
+
+    return (
 
         <div className="container-week">
             <h4>Week</h4>
             <button className=" btn-gnral btn-celcius">ºC</button>
             <button className=" btn-gnral btn-Farighein">ºF</button>
-            
 
-               {/* Contenendor de las card */} 
-            <div  className="container-Card-Week">
-            <div className= "container-sun">
-                <p>Sun</p>
-                <img className="img-sun" src={sum} alt="sun" />
-                <p>15º <span className="spam-styl">-3</span> </p>
-            </div >
-            <div className= "container-sun">
-                <p>Mon</p>
-                <img className="img-sun" src={sum} alt="sun" />
-                <p>12º <span className="spam-styl">-7º</span> </p>
-            </div>
-            <div className= "container-sun">
-                <p>Tue</p>
-                <img className="img-sun" src={sum} alt="sun" />
-                <p>9º <span className="spam-styl">-7º</span> </p>
-            </div>
 
-            <div className= "container-sun">
-                <p>Wed</p>
-                <img className="img-sun" src={sum} alt="sun" />
-                <p>8º <span className="spam-styl">-1º</span> </p>
-            </div >
-            <div className= "container-sun">
-                <p>Thu</p>
-                <img className="img-sun" src={sum} alt="sun" />
-                <p>5º <span className="spam-styl">-2º</span> </p>
-            </div>
-            <div className= "container-sun">
-                <p>Fri</p>
-                <img className="img-sun" src={sum} alt="sun" />
-                <p>4º <span className="spam-styl">-4º</span> </p>
-            </div>
+            {/* Contenendor de las card */}
+            <div className="container-Card-Week">
 
-            <div className= "container-sun">
-                <p>Sat</p>
-                <img className="img-sun" src={sum} alt="sun" />
-                <p>3º <span className="spam-styl">-3º</span> </p>
-            </div>
+                {/*UNA CARD POR CADA DIA DE LA SEMANA*/}
+                {/*EN VERSIONES POSTERIORES SE GENERAN LAS 7 EN UN SOLO BUCLE*/}
 
+                <SmallWeatherCard day={testDay} src={testSrc} maxTemp={testMax} minTemp={testMin}></SmallWeatherCard>
+
+                <SmallWeatherCard day={testDay} src={testSrc} maxTemp={testMax} minTemp={testMin}></SmallWeatherCard>
+
+                <SmallWeatherCard day={testDay} src={testSrc} maxTemp={testMax} minTemp={testMin}></SmallWeatherCard>
+
+                <SmallWeatherCard day={testDay} src={testSrc} maxTemp={testMax} minTemp={testMin}></SmallWeatherCard>
+
+                <SmallWeatherCard day={testDay} src={testSrc} maxTemp={testMax} minTemp={testMin}></SmallWeatherCard>
+
+                <SmallWeatherCard day={testDay} src={testSrc} maxTemp={testMax} minTemp={testMin}></SmallWeatherCard>
+
+                <SmallWeatherCard day={testDay} src={testSrc} maxTemp={testMax} minTemp={testMin}></SmallWeatherCard>
             </div>
-        </div>        
+        </div>
     );
 }
 export default ComponentWeek;
