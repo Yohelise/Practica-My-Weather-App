@@ -13,7 +13,7 @@ function MainViewLower() {
 
     return (
         <div className='main__container'>
-            <h4>Today's Highlights</h4>
+            <p className='main_text'>Today's Highlights</p>
             <div className='cards__container'>
                 <MediumWeatherCard title={testTitle} value={testValue2} ></MediumWeatherCard>
                 <MediumWeatherCard title={testTitle} value={testValue1} ></MediumWeatherCard>
