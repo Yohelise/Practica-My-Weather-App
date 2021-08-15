@@ -31,13 +31,16 @@
     background-color:  #F7F6F9;
 }
 
-#location-icon{
-   font-size: 30px; 
-   font-size: 30px;
-   height: 14px;  
-   padding-top: 2px;
-   padding-left: 1.2px;
+.location-icon{
+    padding: 0.2rem;
+   border-radius: 50%;
+   background-color: #F7F6F9;
   }
+
+.location-icon:hover{
+
+    cursor:pointer;
+}
 
 .bwc-img{
     height: 250px;    

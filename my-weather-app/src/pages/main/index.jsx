@@ -5,11 +5,11 @@ import './style.css'
 import { useEffect, useState } from 'react'
 import keyJson from '../../api-key.json' //in order to use API KEY use 'keyJson.APIkey'
 
-let city = 'santa cruz de tenerife';//testing purposes
+
 let part = 'minutely,hourly,alerts'//this is to exclude info on the response
 // check https://openweathermap.org/current#data for open on units posible values and its meaning
 let units = 'metric'
-
+// let city = 'santa cruz de tenerife';
 // String.prototype.capitalize = function () {
 //     return this.charAt(0).toUpperCase() + this.slice(1);
 //Variables needed for the left lateral panel
@@ -25,6 +25,7 @@ const MainPage = () => {
 
 
     const [state, setState] = useState({
+        city: 'puerto de la cruz',
         imgMeteo: '',
         tempActual: '',
         dia: '',
@@ -66,8 +67,7 @@ const MainPage = () => {
                     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&exclude=${part}&appid=${keyJson.APIkey}&units=${units}`)
                         .then(answer => { return answer.json() })
                         .then(info => {
-                            console.log(info);
-                            console.log('hola')
+
                             updateState(info);
 
                         })
@@ -76,7 +76,14 @@ const MainPage = () => {
     }
 
 
-    useGetPosition(city);
+
+    useGetPosition(state.city);
+
+    const updateSearch = (city) => {
+
+        setState({ city: city })
+
+    }
 
     // {    STATE STRUCTURE  ---> JUST FOR INFO  -->> PROPS EQUIVALENT
     //     imgMeteo: '',      ----------------------> props.imgMeteo                 
@@ -92,12 +99,13 @@ const MainPage = () => {
     return (
         <div className="main_container">
 
-            <BigWeatherCard className='left_panel' imgMeteo={state.imgMeteo} tempActual={state.tempActual} day={state.dia} time={state.hora} description={state.description} rainProb={state.lluviaProb} units={state.units}></BigWeatherCard>
+            <BigWeatherCard className='left_panel' imgMeteo={state.imgMeteo} tempActual={state.tempActual} day={state.dia} time={state.hora} description={state.description} rainProb={state.lluviaProb} units={state.units} cityName={(city) => updateSearch(city)}></BigWeatherCard>
 
-            <ComponentWeek className='right_panel' dailyInfo={state.dailyInfoObject} highlights={state.highlights}></ComponentWeek>
+            <ComponentWeek className='right_panel' dailyInfo={state.dailyInfoObject} highlights={state.highlights} ></ComponentWeek>
 
         </div>
     )
+    //cityName={(city) => setState({ city: city })}
 }
 
 export default MainPage;
