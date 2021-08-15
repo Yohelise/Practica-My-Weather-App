@@ -1,16 +1,3 @@
-.app_container{
-    background-color:#D6D7DB ;
-    height: 90vh;
-    align-items: center;
-    justify-content: center;
-
-}
-.total-container{  
-    border-radius: 36px;
-    background-color: #F7F6F9;
-    width: 95vw;
-    height: 82vh;
-}
 .container-bwc{
     background-color:#FFFFFF;
     border-radius: 36px 0 0 36px;   
@@ -21,45 +8,55 @@
 
 .bwc-filter{
     display: flex;
-    margin: 3vh;
-    align-items: center
+    align-items: center;
+    margin: 30px;
 }
 .search-img{
     height: 15px;
 
 }
 .search_area{   
-    width: 25vh;
+    width: 204px;
     padding: 0.6rem 2.2rem 0.6rem 0.9rem;
     border: none;
     outline: none;
     color: #1A1A1A;
 }
 
-.location-icon{
-    background-color: rgb(240, 240, 240);
-    border-radius: 10px;
-    font-size: 2px;   
+.geolocation-button{
+    size: 20px;
+    border: none;
+    padding: 1px;
+    border-radius: 64%;
+    background-color:  #F7F6F9;
+}
+
+#location-icon{
+   font-size: 30px; 
+   font-size: 30px;
+   height: 14px;  
+   padding-top: 2px;
+   padding-left: 1.2px;
   }
 
 .bwc-img{
-    height: 30vh;    
+    height: 250px;    
 }
 
 .content-container {
     display: flex;
     flex-direction: column;
-    align-items: left;
-    margin-left: 4vh;
+    align-items: end;
+    margin-left: 43px;
 }
 
 .temp-date-container{
     border-bottom: 0.5px solid #CECECE;
-    width: 17vw;
+    width: 150px;
     padding-bottom: 10px;
 }
 .bwc-temp{
-    font-size: 38px;
+    font-size: 58px;
     font-weight: 100;
     color: #1A1A1A;
 }
@@ -85,7 +82,7 @@
 }
 
 .bwc-sumary{
-   margin-left: 8px;
+   padding: 8px;
    color:#1A1A1A;
 }
 
@@ -95,7 +92,7 @@
 }
 
 .bwc-rainProb{
-    padding: 2vh;
+    padding: 12px;
     color:#1A1A1A;
 }
 
