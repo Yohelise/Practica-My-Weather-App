@@ -13,8 +13,6 @@ function SmallWeatherCard(props) {
 
     const date = new Date(props.dayInfo.dt * 1000);
 
-    // console.log(props.dayInfo.clouds)
-    console.log()
     const icon = props.dayInfo.weather[0].icon
 
 
