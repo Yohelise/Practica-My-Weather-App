@@ -10,8 +10,8 @@ let part = 'minutely,hourly,alerts'//this is to exclude info on the response
 // check https://openweathermap.org/current#data for open on units posible values and its meaning
 let units = 'metric'
 
-
-
+// String.prototype.capitalize = function () {
+//     return this.charAt(0).toUpperCase() + this.slice(1);
 //Variables needed for the left lateral panel
 // let imgMeteo = '';
 // let tempActual = '';
@@ -22,6 +22,7 @@ let units = 'metric'
 //-------------------------------------------------
 
 const MainPage = () => {
+
 
     const [state, setState] = useState({
         imgMeteo: '',
@@ -38,7 +39,6 @@ const MainPage = () => {
         const date = new Date(info.current.dt * 1000);
 
 
-
         setState({
 
             //info for lateral left view
@@ -46,7 +46,7 @@ const MainPage = () => {
             tempActual: Math.round(info.current.temp),
             dia: date.toLocaleString('en-us', { weekday: 'short' }),
             hora: `${date.getHours()}:${date.getMinutes()}`,
-            description: info.current.weather[0].description,
+            description: info.current.weather[0].description.charAt(0).toUpperCase() + info.current.weather[0].description.slice(1),
             lluviaProb: (parseInt(info.daily[0].pop) * 100) + '%',
             units: 'celsius',
             //info for daily small cards
