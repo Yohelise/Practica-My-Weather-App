@@ -1,7 +1,7 @@
 import MediumWeatherCard from '../../components/medium-weather-card'
 import './style.css'
 
-function MainViewLower() {
+function MainViewLower(props) {
 
     //TEMPORARY PROPS VALUES, WILL COME FROM API IN THE FUTURE
 
@@ -10,6 +10,10 @@ function MainViewLower() {
     let testValue2 = '5'
     let testSecondValue = '5:42 pm'
     let testMsg = 'Hola 😊'
+
+    //receives props.highligths wich
+
+    console.log(typeof props.highlights)
 
     return (
         <div className='main__container'>
