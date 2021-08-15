@@ -5,13 +5,14 @@
      border-top-right-radius: 30px;
      border-bottom-right-radius: 30px;
      padding: 10px;
+     height: 733px;
 
 
 }
 .title-week{
     text-decoration: underline;
     text-align: left;
-    margin-right: 60%;
+    margin-right: 66%;
     font-size: 1.3rem;
     display: inline-block;
    margin-left: 20px;
@@ -35,11 +36,12 @@
 }
 .container-Card-Week{
     padding: 10;
-    margin: 10px;
+    margin: 26px;
     display: flex;
     flex-wrap: wrap;
     height: 180px;
     max-width: 650;
+    margin: 25px 25px 0 25px;
 
 
 }
