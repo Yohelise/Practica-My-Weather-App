@@ -3,16 +3,19 @@
     flex-direction: column;
     width: 230.6px;
     height: 172px;
-    padding: 1rem 0 1rem 2rem;
+    /* padding: 1rem 0 1rem 2rem; */
     background-color: #FFFFFF;
     border-radius: 20px;
     justify-content: space-between;
     margin: 0.5rem;
+    
+    
 
 }
 .card__title{
     color: #CECECE;
-    right: 200px;
+    padding-inline-start: 1rem;
+    padding-top: 0.5rem;
 }
 .card__value{
     font-weight: 600;
@@ -21,4 +24,6 @@
 }
 .card__msg{
     color: #1A1A1A;
+    padding-inline-start: 1rem;
+    padding-bottom: 0.5rem;
 }
