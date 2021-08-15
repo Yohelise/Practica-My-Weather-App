@@ -22,22 +22,22 @@ function BigWeatherCard(props) {
             </div>
             <img
                 className="bwc-img" alt="sun and cloud"
-                src="https://thumbs.dreamstime.com/b/outline-vector-weather-app-icon-meteorological-symbol-cloudy-rain-163950206.jpg" />
+                src={props.imgMeteo} />
 
             <div className="content-container">
                 <div className="temp-date-container">
-                    <h3 className="bwc-temp"> 12 ºC</h3>
-                    <h5 className="bwc-date"> Monday, <span className="bwc-date time">16:00</span></h5>
+                    <h3 className="bwc-temp"> {props.tempActual}{props.units === 'celsius' ? 'ºC' : 'ºF'}</h3>
+                    <h5 className="bwc-date"> {props.day}, <span className="bwc-date time">{props.time}</span></h5>
                 </div>
 
                 <div className="bwc-sumary-container">
                     <CloudQueueIcon className="cloud-icon"></CloudQueueIcon>
-                    <h6 className="bwc-sumary"> Mostly Cloudy</h6>
+                    <h6 className="bwc-sumary">{props.description}</h6>
                 </div>
 
                 <div className="bwc-rainProb-container">
                     <CloudQueueIcon className="cloud-icon"></CloudQueueIcon>
-                    <h6 className="bwc-rainProb"> Rain -30%</h6>
+                    <h6 className="bwc-rainProb"> Rain {props.rainProb}</h6>
                 </div>
             </div>
 

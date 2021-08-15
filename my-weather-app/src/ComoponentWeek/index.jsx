@@ -3,7 +3,8 @@ import './estilo.css'
 import SmallWeatherCard from '../components/small-weather-card';
 import MainViewLower from '../pages/main-view-lower';
 
-function ComponentWeek() {
+
+function ComponentWeek(props) {
     /**
      * SMALLWEATHERCARD ---PROPS:
      * 
@@ -13,10 +14,13 @@ function ComponentWeek() {
      * minTemp -> min temperature for that day
      */
 
+    // THIS COMPONENT RECEIVES props.dailyInfoObject WHICH CONTAINS AN OBJECT WITH INFORMATION FOR THE NEXT 7 DAYS
+
     let testDay = 'Mon'
     let testSrc = sum;
     let testMax = '15º'
     let testMin = '-2º'
+
 
     return (
 
@@ -26,27 +30,28 @@ function ComponentWeek() {
             <button className=" btn-gnral btn-Farighein">ºF</button>
 
 
+
             {/* Contenendor de las card */}
             <div className="container-Card-Week">
 
                 {/*UNA CARD POR CADA DIA DE LA SEMANA*/}
-                {/*EN VERSIONES POSTERIORES SE GENERAN LAS 7 EN UN SOLO BUCLE*/}
+                {/*EN VERSIONES POSTERIORES SE GENERAN LAS 7 EN UN SOLO BUCLE  quizas no podamos hacerlo ya que en el primer render no existe la prop*/}
 
-                <SmallWeatherCard day={testDay} src={testSrc} maxTemp={testMax} minTemp={testMin}></SmallWeatherCard>
+                <SmallWeatherCard dayInfo={props.dailyInfo[1]}></SmallWeatherCard>
 
-                <SmallWeatherCard day={testDay} src={testSrc} maxTemp={testMax} minTemp={testMin}></SmallWeatherCard>
+                <SmallWeatherCard dayInfo={props.dailyInfo[2]}></SmallWeatherCard>
 
-                <SmallWeatherCard day={testDay} src={testSrc} maxTemp={testMax} minTemp={testMin}></SmallWeatherCard>
+                <SmallWeatherCard dayInfo={props.dailyInfo[3]}></SmallWeatherCard>
 
-                <SmallWeatherCard day={testDay} src={testSrc} maxTemp={testMax} minTemp={testMin}></SmallWeatherCard>
+                <SmallWeatherCard dayInfo={props.dailyInfo[4]}></SmallWeatherCard>
 
-                <SmallWeatherCard day={testDay} src={testSrc} maxTemp={testMax} minTemp={testMin}></SmallWeatherCard>
+                <SmallWeatherCard dayInfo={props.dailyInfo[5]}></SmallWeatherCard>
 
-                <SmallWeatherCard day={testDay} src={testSrc} maxTemp={testMax} minTemp={testMin}></SmallWeatherCard>
+                <SmallWeatherCard dayInfo={props.dailyInfo[6]}></SmallWeatherCard>
 
-                <SmallWeatherCard day={testDay} src={testSrc} maxTemp={testMax} minTemp={testMin}></SmallWeatherCard>
+                <SmallWeatherCard dayInfo={props.dailyInfo[7]}></SmallWeatherCard>
             </div>
-            <MainViewLower className='right_panel_lower_view'></MainViewLower>
+            <MainViewLower className='right_panel_lower_view' highligthsInfo={props.highlights}></MainViewLower>
         </div>
     );
 }
