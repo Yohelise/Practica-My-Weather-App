@@ -15,7 +15,8 @@ function MediumWeatherCard(props) {
         <div className='container'>
             <h4 className='card__title'>{props.title}</h4>
             <p className='card__value'>{props.value}</p>
-            {props.secondaryValue === '' ? <br></br> : <p className='card__value'>{props.secondaryValue}</p>}
+            { props.secondaryValue === '' ? <br></br> : <p className='sun-values'>{props.secondaryValue}</p>}
+          
             {props.msg === '' ? <br></br> : <p className='card__msg'>{props.msg}</p>}
         </div>
     )

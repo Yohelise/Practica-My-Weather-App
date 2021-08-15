@@ -32,11 +32,9 @@
 }
 
 #location-icon{
-   font-size: 30px; 
-   font-size: 30px;
-   height: 14px;  
-   padding-top: 2px;
-   padding-left: 1.2px;
+    border-radius: 50%;
+    background: rgb(241, 240, 240);
+    font-size: 18px; 
   }
 
 .bwc-img{
@@ -57,7 +55,7 @@
 }
 .bwc-temp{
     font-size: 58px;
-    font-weight: 100;
+    font-weight: 300;
     color: #1A1A1A;
 }
 .bwc-date{
@@ -65,10 +63,12 @@
     font-size: 18px;
     margin-bottom: 15px;
     color: #1A1A1A;
+    font-weight: 500;
 }
 
 .time{
     color: #CECECE;
+    font-weight: 500;
 }
 
 .bwc-sumary-container{
@@ -84,6 +84,7 @@
 .bwc-sumary{
    padding: 8px;
    color:#1A1A1A;
+   font-size: 11px;
 }
 
 .bwc-rainProb-container{
@@ -92,8 +93,9 @@
 }
 
 .bwc-rainProb{
-    padding: 12px;
+    padding: 8px;
     color:#1A1A1A;
+    font-size: 11px;
 }
 
 .right{

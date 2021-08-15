@@ -3,7 +3,6 @@
     flex-direction: column;
     width: 230.6px;
     height: 172px;
-    padding: 1rem 0 1rem 2rem;
     background-color: #FFFFFF;
     border-radius: 20px;
     justify-content: space-between;
@@ -13,12 +12,24 @@
 .card__title{
     color: #CECECE;
     right: 200px;
+    margin-top: 15px;
+    margin-left: 35px;
+    font-weight: 400;
 }
 .card__value{
-    font-weight: 600;
-    font-size: 30px;
-    margin-left: 70px;
+    font-weight: 500;
+    font-size: 34px;
+    margin-left: 82px;
+}
+
+.sun-values{
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: 82px;
+
 }
 .card__msg{
     color: #1A1A1A;
+    padding-bottom: 14px;
+    padding-left: 34px;
 }
