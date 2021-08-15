@@ -16,12 +16,6 @@ function ComponentWeek(props) {
 
     // THIS COMPONENT RECEIVES props.dailyInfoObject WHICH CONTAINS AN OBJECT WITH INFORMATION FOR THE NEXT 7 DAYS
 
-    let testDay = 'Mon'
-    let testSrc = sum;
-    let testMax = '15º'
-    let testMin = '-2º'
-
-
     return (
 
         <div className="container-week">
@@ -51,8 +45,9 @@ function ComponentWeek(props) {
 
                 <SmallWeatherCard dayInfo={props.dailyInfo[7]}></SmallWeatherCard>
             </div>
-            <MainViewLower className='right_panel_lower_view' highligthsInfo={props.highlights}></MainViewLower>
+            <MainViewLower className='right_panel_lower_view' highlightsInfo={props.highlights}></MainViewLower>
         </div>
     );
 }
+
 export default ComponentWeek;
