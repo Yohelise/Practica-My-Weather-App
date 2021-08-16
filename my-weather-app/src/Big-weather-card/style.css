@@ -39,7 +39,7 @@
   }
 
 .location-icon:hover{
-
+    background-color: #8c8c8c;
     cursor:pointer;
 }
 
@@ -60,9 +60,15 @@
     padding-bottom: 10px;
 }
 .bwc-temp{
-    font-size: 58px;
-    font-weight: 300;
+    font-size: 65px;
+    font-family: Roboto, sans-serif;
+    font-weight:bold;
     color: #1A1A1A;
+}
+sup{
+    font-size: 30px;
+    font-family: Roboto;
+    font-weight: bold;
 }
 .bwc-date{
     margin-top: 10px;

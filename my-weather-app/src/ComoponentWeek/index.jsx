@@ -26,6 +26,8 @@ function ComponentWeek(props) {
         return (
 
             <div className="container-week">
+
+
                 <p className="title-week">Week</p>
                 <button className={buttonA.class} onClick={() => {
                     if (buttonA.class === "btn-gnral btn-celcius") {
@@ -52,6 +54,7 @@ function ComponentWeek(props) {
                         props.updateUnit('metric')
                     }
                 }}>ºF</button>
+
 
 
 
