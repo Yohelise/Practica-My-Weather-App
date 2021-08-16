@@ -61,11 +61,14 @@
 }
 
 .units{
-    font-size: 16px;
+    font-size: 30px;
 }
 .card__msg{
     color: #1A1A1A;
     padding-bottom: 14px;
     padding-left: 34px;
 
+}
+.sup-humidity{
+    font-size: 18px;
 }

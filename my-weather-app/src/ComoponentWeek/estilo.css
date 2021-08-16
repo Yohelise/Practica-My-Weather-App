@@ -1,3 +1,9 @@
+@font-face { 
+    font-family: 'Roboto';
+    font-weight: "900";
+    src: url("../asset/fonts/Roboto-Bold.ttf"); 
+  }
+
 .container-week{
     width:845px;
     background-color: #F7F6F9;
@@ -7,22 +13,26 @@
      padding: 10px;
      height: 733px;
     
+    
 
 }
 .title-week{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
     margin-top: 18px;
     text-align: left;
     margin-right: 61%;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     display: inline-block;
     margin-left: 50px;
-    font-family: Roboto, sans-serif;
-    font-weight: 900;
+    
+    
 
 }
-.title-week > ins{
-    margin-bottom: 5px;
-
+ .sup-title{
+    
+    padding-top: 3px;
+ 
 }
 .btn-gnral{
     border-radius: 60%;
