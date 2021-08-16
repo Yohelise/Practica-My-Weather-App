@@ -19,12 +19,14 @@ function MediumWeatherCard(props) {
             <h4 className='card__title'>{props.title}</h4>
             {/* <p className='card__value'>{props.value}</p> */}
             {props.title === 'UV Index' ? <p className= 'card__value'>{props.value}</p> :''}
-            {props.title === 'Wind Status' ? <p className= 'card__value'>{props.value}</p> :''}
+            {props.title === 'Wind Status' ? <p className= 'wind-status'>{props.value} <span className = 'units'> km/h </span></p> :''}
             {props.title ==='Sunrise & Sunset'? <p className="sun-values">{props.value}</p> : ''}
-            { props.secondaryValue ==='' ? '' : <p className='sun-values'>{props.secondaryValue}</p>}                 
-            {/* {props.msg === '' ? <br></br> : <p className='card__msg'>{props.msg}</p>} */}
+            { props.secondaryValue ==='' ? '' : <p className='sun-values'>{props.secondaryValue}</p>}   
+            {props.title ==='Humidity'? <p className="humidity">{props.value} <span className = 'units'> % </span></p> : <p className='card__value'></p>}    
+            {props.title ==='Visibility'? <p className="visibility">{props.value} <span className = 'units'> Km </span></p> : <p className='card__value'></p>}           
+            {props.msg === '' ? <br></br> : <p className='card__msg'>{props.msg}</p>}
       
-            {props.title ==='Humidity'? <p className="humidity">{props.value} <span className = 'units'> % </span></p> : <p className='card__value'></p>}
+            
             {/* {props.title ==='Visibility'? <p className="visibility">{props.value}</p> : <p className='card__value'></p>} */}
 
                            
