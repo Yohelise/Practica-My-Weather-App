@@ -27,8 +27,8 @@ function ComponentWeek(props) {
 
             <div className="container-week">
 
-
-                <p className="title-week">Week</p>
+            
+                <p className="title-week"><ins className="sup-title">Week</ins></p>
                 <button className={buttonA.class} onClick={() => {
                     if (buttonA.class === "btn-gnral btn-celcius") {
                         setButtonA({ class: "btn-gnral btn-fahrenheit" });
