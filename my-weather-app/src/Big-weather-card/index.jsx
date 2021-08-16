@@ -18,7 +18,7 @@ function BigWeatherCard(props) {
                     className="search-img"
                 />
                 <input type="text" placeholder="Search for places..." className="search_area"></input>
-                <LocationSearchingIcon id="location-icon"></LocationSearchingIcon>
+                <button className='geolocation-button'><LocationSearchingIcon id= "location-icon"></LocationSearchingIcon> </button>
             </div>
             <img
                 className="bwc-img" alt="sun and cloud"

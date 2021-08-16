@@ -37,7 +37,7 @@ function MainViewLower(props) {
                     <MediumWeatherCard title='UV Index' value={props.highlightsInfo.uvi} ></MediumWeatherCard>
                     <MediumWeatherCard title='Wind Status' value={props.highlightsInfo.wind_speed} ></MediumWeatherCard>
                     <MediumWeatherCard title='Sunrise & Sunset' value={sunriseTime} secondaryValue={sunsetTime} ></MediumWeatherCard>
-                    <MediumWeatherCard title='Humidity' value={props.highlightsInfo.humidity + '%'} msg={humMsg}></MediumWeatherCard>
+                    <MediumWeatherCard title='Humidity' value={props.highlightsInfo.humidity} msg={humMsg}></MediumWeatherCard>
                     <MediumWeatherCard title='Visibility' value={visibility} msg={visMsg}></MediumWeatherCard>
                 </div>
             </div>
@@ -51,7 +51,7 @@ function MainViewLower(props) {
                 <div className='cards__container'>
                     <MediumWeatherCard title='UV Index' value='9.53' ></MediumWeatherCard>
                     <MediumWeatherCard title='Wind Status' value='5.9' ></MediumWeatherCard>
-                    <MediumWeatherCard className="sun-values" title='Sunrise & Sunset' value='07:43' secondaryValue='21:12' ></MediumWeatherCard>
+                    <MediumWeatherCard title='Sunrise & Sunset' value='07:43' secondaryValue='21:12' ></MediumWeatherCard>
                     <MediumWeatherCard title='Humidity' value='74%' msg='High 💦'></MediumWeatherCard>
                     <MediumWeatherCard title='Visibility' value='6.0 km' msg='Medium 🧐'></MediumWeatherCard>
                 </div>

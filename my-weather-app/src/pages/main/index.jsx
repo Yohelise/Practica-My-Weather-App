@@ -5,7 +5,7 @@ import './style.css'
 import { useEffect, useState } from 'react'
 import keyJson from '../../api-key.json' //in order to use API KEY use 'keyJson.APIkey'
 
-let city = 'santa cruz de tenerife';//testing purposes
+let city = 'gijon';//testing purposes
 let part = 'minutely,hourly,alerts'//this is to exclude info on the response
 // check https://openweathermap.org/current#data for open on units posible values and its meaning
 let units = 'metric'

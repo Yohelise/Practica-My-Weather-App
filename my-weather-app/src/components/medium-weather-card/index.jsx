@@ -1,7 +1,10 @@
 import './style.css'
 
+
+
 function MediumWeatherCard(props) {
 
+    
     /**
      * COMPONENT PROPS:
      * title={testTitle} value={testValue} secondaryValue={testSecondValue} msg={testMsg}
@@ -14,10 +17,17 @@ function MediumWeatherCard(props) {
     return (
         <div className='container'>
             <h4 className='card__title'>{props.title}</h4>
-            <p className='card__value'>{props.value}</p>
-            { props.secondaryValue === '' ? <br></br> : <p className='sun-values'>{props.secondaryValue}</p>}
-          
-            {props.msg === '' ? <br></br> : <p className='card__msg'>{props.msg}</p>}
+            {/* <p className='card__value'>{props.value}</p> */}
+            {props.title === 'UV Index' ? <p className= 'card__value'>{props.value}</p> :''}
+            {props.title === 'Wind Status' ? <p className= 'card__value'>{props.value}</p> :''}
+            {props.title ==='Sunrise & Sunset'? <p className="sun-values">{props.value}</p> : ''}
+            { props.secondaryValue ==='' ? '' : <p className='sun-values'>{props.secondaryValue}</p>}                 
+            {/* {props.msg === '' ? <br></br> : <p className='card__msg'>{props.msg}</p>} */}
+      
+            {props.title ==='Humidity'? <p className="humidity">{props.value} <span className = 'units'> % </span></p> : <p className='card__value'></p>}
+            {/* {props.title ==='Visibility'? <p className="visibility">{props.value}</p> : <p className='card__value'></p>} */}
+
+                           
         </div>
     )
 }
