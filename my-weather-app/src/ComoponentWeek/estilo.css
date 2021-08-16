@@ -1,5 +1,5 @@
 .container-week{
-    width:800px;
+    width:845px;
     background-color: #F7F6F9;
      min-height:550px;
      border-top-right-radius: 30px;
@@ -8,13 +8,16 @@
      height: 733px;
     
 
+
 }
 .title-week{
     margin-top: 18px;
     text-align: left;
-    margin-right: 66%;
+    margin-right: 61%;
     font-size: 1.3rem;
     display: inline-block;
+    margin-left: 50px;
+
     margin-left: 20px;
     font-family: Roboto;
     font-weight: bold;
@@ -24,6 +27,7 @@
     margin-bottom: 3px;
 
     
+
 }
 .btn-gnral{
     border-radius: 60%;
@@ -43,8 +47,6 @@
     padding: 12px;
 }
 .container-Card-Week{
-    padding: 10;
-    margin: 26px;
     display: flex;
     flex-wrap: wrap;
     height: 180px;
@@ -52,6 +54,7 @@
     margin: 25px 25px 0 25px;
     font-family: Roboto;
     font-weight: bold;
+
 
 
 }

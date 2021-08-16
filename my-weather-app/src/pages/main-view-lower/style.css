@@ -1,16 +1,11 @@
 .main__container{
     width: 780px;
     background-color: #F7F6F9;
-    margin:auto;
-    padding-bottom: 100px;
-    height: 449px;
-    padding-left: 0.2rem;
-    padding-right: 1rem;
-
-
+    height: 431px;
+    padding-left: 1.2rem;
 }
 .cards__container{
-    
+    margin-left: 16px;    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -23,7 +18,7 @@
     margin-right: 60%;
     font-size: 1.3rem;
     display: inline-block;
-    margin-left: 20px;
+    margin-left: 30px;
     padding-bottom: 1.2rem;
 
 }
