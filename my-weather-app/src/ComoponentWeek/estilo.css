@@ -5,18 +5,29 @@
      border-top-right-radius: 30px;
      border-bottom-right-radius: 30px;
      padding: 10px;
-     height: 720px;
+     height: 733px;
+    
 
 
 }
 .title-week{
     margin-top: 18px;
-    text-decoration: underline;
     text-align: left;
     margin-right: 61%;
     font-size: 1.3rem;
     display: inline-block;
     margin-left: 50px;
+
+    margin-left: 20px;
+    font-family: Roboto;
+    font-weight: bold;
+
+}
+.title-week > ins{
+    margin-bottom: 3px;
+
+    
+
 }
 .btn-gnral{
     border-radius: 60%;
@@ -38,8 +49,12 @@
 .container-Card-Week{
     display: flex;
     flex-wrap: wrap;
-    height: 164px;
-    margin: 25px 25px 0 40px;
+    height: 180px;
+    max-width: 650;
+    margin: 25px 25px 0 25px;
+    font-family: Roboto;
+    font-weight: bold;
+
 
 
 }

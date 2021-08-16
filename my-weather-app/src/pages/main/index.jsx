@@ -22,9 +22,13 @@ let units = 'metric'
 
 const MainPage = () => {
 
+    const [cityState, setCityState] = useState({
+        city: 'valverde'
+    })
+
 
     const [state, setState] = useState({
-        city: 'puerto de la cruz',
+        city: 'rosario',
         imgMeteo: '',
         tempActual: '',
         dia: '',
@@ -60,27 +64,33 @@ const MainPage = () => {
 
         useEffect(() => {
             fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${keyJson.APIkey}`)
-                .then(result => { return result.json() })
+                .then(result => {
+                    return result.json()
+                })
                 .then(data => {
 
-                    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&exclude=${part}&appid=${keyJson.APIkey}&units=${units}`)
-                        .then(answer => { return answer.json() })
-                        .then(info => {
+                    if (data.coord !== undefined) {
+                        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&exclude=${part}&appid=${keyJson.APIkey}&units=${units}`)
+                            .then(answer => { return answer.json() })
+                            .then(info => {
 
-                            updateState(info);
+                                updateState(info);
 
-                        })
+                            })
+                    } else {
+                        alert("You should enter a real city. In any language...")
+                    }
                 })
-        }, [])
+        }, [cityState])
     }
 
 
-
-    useGetPosition(state.city);
+    useGetPosition(cityState.city);
 
     const updateSearch = (city) => {
 
-        setState({ city: city })
+        setCityState({ city: city })
+        console.log(cityState.city)
 
     }
 
@@ -98,7 +108,7 @@ const MainPage = () => {
     return (
         <div className="main_container">
 
-            <BigWeatherCard className='left_panel' imgMeteo={state.imgMeteo} tempActual={state.tempActual} day={state.dia} time={state.hora} description={state.description} rainProb={state.lluviaProb} units={state.units} cityName={(city) => updateSearch(city)}></BigWeatherCard>
+            <BigWeatherCard className='left_panel' imgMeteo={state.imgMeteo} tempActual={state.tempActual} day={state.dia} time={state.hora} description={state.description} rainProb={state.lluviaProb} units={state.units} cityName={(city) => updateSearch(city)} ></BigWeatherCard>
 
             <ComponentWeek className='right_panel' dailyInfo={state.dailyInfoObject} highlights={state.highlights} ></ComponentWeek>
 
