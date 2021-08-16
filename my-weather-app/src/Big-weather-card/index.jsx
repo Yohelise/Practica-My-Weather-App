@@ -2,12 +2,18 @@ import React from "react";
 import "./style.css";
 import LocationSearchingIcon from "@material-ui/icons/LocationSearching";
 import CloudQueueIcon from '@material-ui/icons/CloudQueue';
+import BeachAccessIcon from '@material-ui/icons/BeachAccess';
 
 
 function BigWeatherCard(props) {
 
+    const myRef = React.createRef();
+
+
 
     return (
+
+
 
 
         <div className="container-bwc">
@@ -17,8 +23,10 @@ function BigWeatherCard(props) {
                     alt=""
                     className="search-img"
                 />
-                <input type="text" placeholder="Search for places..." className="search_area"></input>
-                <button className='geolocation-button'><LocationSearchingIcon id= "location-icon"></LocationSearchingIcon> </button>
+
+                <input ref={myRef} type="text" placeholder="Search for places..." className="search_area"></input>
+                <LocationSearchingIcon className="location-icon" onClick={() => props.cityName(myRef.current.value)}></LocationSearchingIcon>
+
             </div>
             <img
                 className="bwc-img" alt="sun and cloud"
@@ -36,7 +44,7 @@ function BigWeatherCard(props) {
                 </div>
 
                 <div className="bwc-rainProb-container">
-                    <CloudQueueIcon className="cloud-icon"></CloudQueueIcon>
+                    <BeachAccessIcon className="cloud-icon"></BeachAccessIcon>
                     <h6 className="bwc-rainProb"> Rain {props.rainProb}</h6>
                 </div>
             </div>
