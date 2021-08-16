@@ -1,10 +1,16 @@
-import sum from '../asset/sun.png'
+
 import './estilo.css'
 import SmallWeatherCard from '../components/small-weather-card';
 import MainViewLower from '../pages/main-view-lower';
+import { useState } from 'react';
 
 
 function ComponentWeek(props) {
+
+
+    //this 2 states are 
+    let [buttonA, setButtonA] = useState({ class: "btn-gnral btn-celcius" });
+    let [buttonB, setButtonB] = useState({ class: "btn-gnral btn-Farighein" });
     /**
      * SMALLWEATHERCARD ---PROPS:
      * 
@@ -20,9 +26,35 @@ function ComponentWeek(props) {
         return (
 
             <div className="container-week">
-                <p className="title-week"><ins className="tilte-sup">Week</ins></p>
-                <button className=" btn-gnral btn-celcius">ºC</button>
-                <button className=" btn-gnral btn-Farighein">ºF</button>
+
+
+                <p className="title-week">Week</p>
+                <button className={buttonA.class} onClick={() => {
+                    if (buttonA.class === "btn-gnral btn-celcius") {
+                        setButtonA({ class: "btn-gnral btn-Farighein" });
+                        setButtonB({ class: "btn-gnral btn-celcius" });
+                        props.updateUnit('imperial')
+                    } else {
+                        setButtonA({ class: "btn-gnral btn-celcius" });
+                        setButtonB({ class: "btn-gnral btn-Farighein" });
+                        props.updateUnit('metric')
+                    }
+
+
+
+                }}>ºC</button>
+                <button className={buttonB.class} onClick={() => {
+                    if (buttonB.class === "btn-gnral btn-Farighein") {
+                        setButtonA({ class: "btn-gnral btn-Farighein" });
+                        setButtonB({ class: "btn-gnral btn-celcius" });
+                        props.updateUnit('imperial')
+                    } else {
+                        setButtonA({ class: "btn-gnral btn-celcius" });
+                        setButtonB({ class: "btn-gnral btn-Farighein" });
+                        props.updateUnit('metric')
+                    }
+                }}>ºF</button>
+
 
 
 
@@ -46,7 +78,7 @@ function ComponentWeek(props) {
 
                     <SmallWeatherCard dayInfo={props.dailyInfo[7]}></SmallWeatherCard>
                 </div>
-                <MainViewLower className='right_panel_lower_view' highlightsInfo={props.highlights}></MainViewLower>
+                <MainViewLower className='right_panel_lower_view' highlightsInfo={props.highlights} units={props.units}></MainViewLower>
             </div>
         );
 
@@ -54,8 +86,8 @@ function ComponentWeek(props) {
         return (
             <div className="container-week">
                 <p className="title-week">Week</p>
-                <button className=" btn-gnral btn-celcius">ºC</button>
-                <button className=" btn-gnral btn-Farighein">ºF</button>
+                <button className={buttonA} >ºC</button>
+                <button className={buttonB}>ºF</button>
 
 
 

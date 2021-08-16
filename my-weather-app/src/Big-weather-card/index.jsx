@@ -34,7 +34,9 @@ function BigWeatherCard(props) {
 
             <div className="content-container">
                 <div className="temp-date-container">
+
                     <h3 className="bwc-temp"> {props.tempActual}<sup>{props.units === 'celsius' ? 'ºC' : 'ºF'}</sup></h3>
+
                     <h5 className="bwc-date"> {props.day}, <span className="bwc-date time">{props.time}</span></h5>
                 </div>
 
