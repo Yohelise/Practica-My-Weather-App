@@ -35,7 +35,7 @@ function MainViewLower(props) {
                 <p className='main_text'>Today's Highlights</p>
                 <div className='cards__container'>
                     <MediumWeatherCard title='UV Index' value={props.highlightsInfo.uvi} ></MediumWeatherCard>
-                    <MediumWeatherCard title='Wind Status' value={props.highlightsInfo.wind_speed} ></MediumWeatherCard>
+                    <MediumWeatherCard title='Wind Status' value={props.highlightsInfo.wind_speed + 'km/h'} ></MediumWeatherCard>
                     <MediumWeatherCard title='Sunrise & Sunset' value={sunriseTime} secondaryValue={sunsetTime} ></MediumWeatherCard>
                     <MediumWeatherCard title='Humidity' value={props.highlightsInfo.humidity} msg={humMsg}></MediumWeatherCard>
                     <MediumWeatherCard title='Visibility' value={visibility} msg={visMsg}></MediumWeatherCard>

@@ -31,11 +31,17 @@
     background-color:  #F7F6F9;
 }
 
-#location-icon{
-    border-radius: 50%;
-    background: rgb(241, 240, 240);
-    font-size: 18px; 
+
+.location-icon{
+    padding: 0.2rem;
+   border-radius: 50%;
+   background-color: #F7F6F9;
   }
+
+.location-icon:hover{
+
+    cursor:pointer;
+}
 
 .bwc-img{
     height: 250px;    
