@@ -23,8 +23,10 @@ function BigWeatherCard(props) {
                     alt=""
                     className="search-img"
                 />
+
                 <input ref={myRef} type="text" placeholder="Search for places..." className="search_area"></input>
                 <LocationSearchingIcon className="location-icon" onClick={() => props.cityName(myRef.current.value)}></LocationSearchingIcon>
+
             </div>
             <img
                 className="bwc-img" alt="sun and cloud"

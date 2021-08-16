@@ -37,8 +37,8 @@ function MainViewLower(props) {
                     <MediumWeatherCard title='UV Index' value={props.highlightsInfo.uvi} ></MediumWeatherCard>
                     <MediumWeatherCard title='Wind Status' value={props.highlightsInfo.wind_speed + 'km/h'} ></MediumWeatherCard>
                     <MediumWeatherCard title='Sunrise & Sunset' value={sunriseTime} secondaryValue={sunsetTime} ></MediumWeatherCard>
-                    <MediumWeatherCard title='Humidity' value={props.highlightsInfo.humidity + '%'} msg={humMsg}></MediumWeatherCard>
-                    <MediumWeatherCard title='Visibility' value={visibility + ' km'} msg={visMsg}></MediumWeatherCard>
+                    <MediumWeatherCard title='Humidity' value={props.highlightsInfo.humidity} msg={humMsg}></MediumWeatherCard>
+                    <MediumWeatherCard title='Visibility' value={visibility} msg={visMsg}></MediumWeatherCard>
                 </div>
             </div>
 
