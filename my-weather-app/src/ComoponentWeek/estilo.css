@@ -1,46 +1,61 @@
 .container-week{
-    width:800px;
+    width:845px;
     background-color: #F7F6F9;
      min-height:550px;
      border-top-right-radius: 30px;
      border-bottom-right-radius: 30px;
      padding: 10px;
      height: 733px;
+    
 
 }
 .title-week{
     margin-top: 18px;
-    text-decoration: underline;
     text-align: left;
-    margin-right: 66%;
-    font-size: 1.3rem;
+    margin-right: 61%;
+    font-size: 1.5rem;
     display: inline-block;
-   margin-left: 20px;
+    margin-left: 50px;
+    font-family: Roboto, sans-serif;
+    font-weight: 900;
+
+}
+.title-week > ins{
+    margin-bottom: 5px;
+
 }
 .btn-gnral{
     border-radius: 60%;
     border: none;
     padding: 10px;
     margin: 5px; 
- 
 }
 .btn-celcius{
     background-color: #1A1A1A;
     color: white ;
-   
+}
+.btn-celcius:hover{
+    background-color: rgb(121, 121, 121);
+    color: rgb(0, 0, 0);
+    cursor:pointer;
 }
 .btn-fahrenheit{
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     padding: 12px;
 }
+.btn-Farighein:hover{
+    background-color: #767676;
+    color: white ;
+    cursor:pointer;
+}
 .container-Card-Week{
-    padding: 10;
-    margin: 26px;
     display: flex;
     flex-wrap: wrap;
     height: 180px;
     max-width: 650;
     margin: 25px 25px 0 25px;
+    
+
 
 }

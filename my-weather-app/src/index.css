@@ -3,6 +3,11 @@
   font-weight: "100";
   src: url("../src/asset/fonts/Roboto-Thin.ttf"); 
 }
+@font-face { 
+  font-family: 'Roboto';
+  font-weight: "900";
+  src: url("../src/asset/fonts/Roboto-Bold.ttf"); 
+}
 
 * {
   margin: 0;
