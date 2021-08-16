@@ -20,7 +20,7 @@ function ComponentWeek(props) {
         return (
 
             <div className="container-week">
-                <p className="title-week">Week</p>
+                <p className="title-week"><ins className="tilte-sup">Week</ins></p>
                 <button className=" btn-gnral btn-celcius">ºC</button>
                 <button className=" btn-gnral btn-Farighein">ºF</button>
 
