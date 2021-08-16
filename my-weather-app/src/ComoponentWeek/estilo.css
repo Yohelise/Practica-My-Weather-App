@@ -7,7 +7,6 @@
      padding: 10px;
      height: 733px;
 
-
 }
 .title-week{
     margin-top: 18px;
@@ -30,7 +29,7 @@
     color: white ;
    
 }
-.btn-Farighein{
+.btn-fahrenheit{
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     padding: 12px;
@@ -43,6 +42,5 @@
     height: 180px;
     max-width: 650;
     margin: 25px 25px 0 25px;
-
 
 }

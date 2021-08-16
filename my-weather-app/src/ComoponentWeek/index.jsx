@@ -7,10 +7,10 @@ import { useState } from 'react';
 
 function ComponentWeek(props) {
 
-
+    //fahrenheit
     //this 2 states are 
     let [buttonA, setButtonA] = useState({ class: "btn-gnral btn-celcius" });
-    let [buttonB, setButtonB] = useState({ class: "btn-gnral btn-Farighein" });
+    let [buttonB, setButtonB] = useState({ class: "btn-gnral btn-fahrenheit" });
     /**
      * SMALLWEATHERCARD ---PROPS:
      * 
@@ -29,12 +29,12 @@ function ComponentWeek(props) {
                 <p className="title-week">Week</p>
                 <button className={buttonA.class} onClick={() => {
                     if (buttonA.class === "btn-gnral btn-celcius") {
-                        setButtonA({ class: "btn-gnral btn-Farighein" });
+                        setButtonA({ class: "btn-gnral btn-fahrenheit" });
                         setButtonB({ class: "btn-gnral btn-celcius" });
                         props.updateUnit('imperial')
                     } else {
                         setButtonA({ class: "btn-gnral btn-celcius" });
-                        setButtonB({ class: "btn-gnral btn-Farighein" });
+                        setButtonB({ class: "btn-gnral btn-fahrenheit" });
                         props.updateUnit('metric')
                     }
 
@@ -42,13 +42,13 @@ function ComponentWeek(props) {
 
                 }}>ºC</button>
                 <button className={buttonB.class} onClick={() => {
-                    if (buttonB.class === "btn-gnral btn-Farighein") {
-                        setButtonA({ class: "btn-gnral btn-Farighein" });
+                    if (buttonB.class === "btn-gnral btn-fahrenheit") {
+                        setButtonA({ class: "btn-gnral btn-fahrenheit" });
                         setButtonB({ class: "btn-gnral btn-celcius" });
                         props.updateUnit('imperial')
                     } else {
                         setButtonA({ class: "btn-gnral btn-celcius" });
-                        setButtonB({ class: "btn-gnral btn-Farighein" });
+                        setButtonB({ class: "btn-gnral btn-fahrenheit" });
                         props.updateUnit('metric')
                     }
                 }}>ºF</button>

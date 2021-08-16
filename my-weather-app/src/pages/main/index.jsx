@@ -7,36 +7,17 @@ import keyJson from '../../api-key.json' //in order to use API KEY use 'keyJson.
 import Skeleton from '@material-ui/lab/Skeleton';
 
 
-let part = 'minutely,hourly,alerts'//this is to exclude info on the response
+let part = 'minutely,hourly,alerts'//'part' excludes info on api response
 
-
-//Variables needed for the left lateral panel
-// let imgMeteo = '';
-// let tempActual = '';
-// let dia = '';
-// let hora = '';
-// let description = '';
-// let lluviaProb = '';
-//-------------------------------------------------
 
 const MainPage = () => {
 
     //--------------------------------- STATE VARIABLES-------------------------------
-    const [cityState, setCityState] = useState({
-        city: ''
-    })
-    const [loading, setLoading] = useState({
-        state: true
-    })
 
-    const [units, setUnits] = useState({
-        unit: 'metric'
-    })
-    const [flag, setFlag] = useState({
-        value: true
-    })
-
-
+    const [cityState, setCityState] = useState({ city: '' })
+    const [loading, setLoading] = useState({ state: true })
+    const [units, setUnits] = useState({ unit: 'metric' })
+    const [flag, setFlag] = useState({ value: true })
 
     const [state, setState] = useState({
         imgMeteo: '',
@@ -50,27 +31,7 @@ const MainPage = () => {
         dailyInfoObject: ''
     });
 
-    const updateState = (info) => {
 
-        const date = new Date(info.current.dt * 1000);
-
-        setState({
-
-            //info for lateral left view
-            imgMeteo: `https://openweathermap.org/img/wn/${info.current.weather[0].icon}@4x.png`,
-            tempActual: Math.round(info.current.temp),
-            dia: date.toLocaleString('en-us', { weekday: 'short' }),
-            hora: `${date.getHours()}:${date.getMinutes()}`,
-            description: info.current.weather[0].description.charAt(0).toUpperCase() + info.current.weather[0].description.slice(1),
-            lluviaProb: (parseInt(info.daily[0].pop) * 100) + '%',
-            //info for daily small cards
-            dailyInfoObject: info.daily,
-            //infor for today's highlights
-            highlights: info.current
-
-        });
-        setLoading({ state: false })
-    }
     //----------------------------END OF STATE VARBIABLES----------------------------
 
 
@@ -85,38 +46,25 @@ const MainPage = () => {
 
                     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${pos.coords.latitude}&lon=${pos.coords.latitude}&exclude=${part}&appid=${keyJson.APIkey}&units=${units.unit}`)
                         .then(answer => { return answer.json() })
-                        .then(info => {
+                        .then(info => { if (info !== undefined) updateState(info) })
 
-                            if (info !== undefined) updateState(info);
-
-                        })
                     setFlag({ value: false });
                 }
-
                 const error = () => {
                     alert("We can't proceed without your geographic position.")
                 }
-
                 navigator.geolocation.getCurrentPosition(success, error);
-
-
 
             } else {
 
                 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${keyJson.APIkey}`)
-                    .then(result => {
-                        return result.json()
-                    })
+                    .then(result => { return result.json() })
                     .then(data => {
 
                         if (data.coord !== undefined) {
                             fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&exclude=${part}&appid=${keyJson.APIkey}&units=${units.unit}`)
                                 .then(answer => { return answer.json() })
-                                .then(info => {
-
-                                    if (info !== undefined) updateState(info);
-
-                                })
+                                .then(info => { if (info !== undefined) updateState(info); })
                         } else {
                             alert("You should enter a real city. In any language...")
                         }
@@ -127,23 +75,36 @@ const MainPage = () => {
 
     }
 
-
     useGetPosition(cityState.city, flag); // flag state variable is used to identify initial render
 
 
+    const updateState = (info) => {
+        // {    STATE STRUCTURE  ---> JUST FOR INFO  -->> PROPS EQUIVALENT
+        //     imgMeteo: '',      ----------------------> props.imgMeteo                 
+        //     tempActual: '',    ----------------------> props.tempActual
+        //     dia: '',           ----------------------> props.day
+        //     hora: '',          ----------------------> props.time
+        //     description: '',   ----------------------> props.description
+        //     lluviaProb: ''     ----------------------> props.rainProb
+        //    units: ''         -----------------------> props.units
+        const date = new Date(info.current.dt * 1000);
 
-
-    // {    STATE STRUCTURE  ---> JUST FOR INFO  -->> PROPS EQUIVALENT
-    //     imgMeteo: '',      ----------------------> props.imgMeteo                 
-    //     tempActual: '',    ----------------------> props.tempActual
-    //     dia: '',           ----------------------> props.day
-    //     hora: '',          ----------------------> props.time
-    //     description: '',   ----------------------> props.description
-    //     lluviaProb: ''     ----------------------> props.rainProb
-    //    units: ''         -----------------------> props.units
+        setState({
+            //info for lateral left view
+            imgMeteo: `https://openweathermap.org/img/wn/${info.current.weather[0].icon}@4x.png`,
+            tempActual: Math.round(info.current.temp),
+            dia: date.toLocaleString('en-us', { weekday: 'short' }),
+            hora: `${date.getHours()}:${date.getMinutes()}`,
+            description: info.current.weather[0].description.charAt(0).toUpperCase() + info.current.weather[0].description.slice(1),
+            lluviaProb: (parseInt(info.daily[0].pop) * 100) + '%',
+            //info for daily small cards
+            dailyInfoObject: info.daily,
+            //infor for today's highlights
+            highlights: info.current
+        });
+        setLoading({ state: false })
+    }
     // }
-
-
     return (
 
         <div className="main_container">
@@ -154,7 +115,5 @@ const MainPage = () => {
 
         </div>
     )
-    //cityName={(city) => setState({ city: city })}
 }
-
 export default MainPage;
