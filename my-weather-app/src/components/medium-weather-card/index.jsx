@@ -26,10 +26,7 @@ function MediumWeatherCard(props) {
             {props.title ==='Visibility'? <p className="visibility">{props.value} <span className = 'units'> Km </span></p> : ''}           
             {props.msg === '' ? <br></br> : <p className='card__msg'>{props.msg}</p>}
       
-            
-            {/* {props.title ==='Visibility'? <p className="visibility">{props.value}</p> : <p className='card__value'></p>} */}
-
-                           
+                                    
         </div>
     )
 }
