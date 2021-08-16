@@ -4,13 +4,12 @@ import ComponentWeek from "../../ComoponentWeek";
 import './style.css'
 import { useEffect, useState } from 'react'
 import keyJson from '../../api-key.json' //in order to use API KEY use 'keyJson.APIkey'
+import Skeleton from '@material-ui/lab/Skeleton';
+
 
 let part = 'minutely,hourly,alerts'//this is to exclude info on the response
-// check https://openweathermap.org/current#data for open on units posible values and its meaning
-let units = 'metric'
-// let city = 'santa cruz de tenerife';
-// String.prototype.capitalize = function () {
-//     return this.charAt(0).toUpperCase() + this.slice(1);
+
+
 //Variables needed for the left lateral panel
 // let imgMeteo = '';
 // let tempActual = '';
@@ -22,13 +21,24 @@ let units = 'metric'
 
 const MainPage = () => {
 
+    //--------------------------------- STATE VARIABLES-------------------------------
     const [cityState, setCityState] = useState({
-        city: 'valverde'
+        city: ''
+    })
+    const [loading, setLoading] = useState({
+        state: true
+    })
+
+    const [units, setUnits] = useState({
+        unit: 'metric'
+    })
+    const [flag, setFlag] = useState({
+        value: true
     })
 
 
+
     const [state, setState] = useState({
-        city: 'rosario',
         imgMeteo: '',
         tempActual: '',
         dia: '',
@@ -39,9 +49,10 @@ const MainPage = () => {
         //INFO FOR DAILY SMAL WEATHER CARDS. WE SEND THEM THE OBJECT WITH ALL DATA FOR 7 days
         dailyInfoObject: ''
     });
-    const updateState = (info) => {
-        const date = new Date(info.current.dt * 1000);
 
+    const updateState = (info) => {
+
+        const date = new Date(info.current.dt * 1000);
 
         setState({
 
@@ -52,47 +63,75 @@ const MainPage = () => {
             hora: `${date.getHours()}:${date.getMinutes()}`,
             description: info.current.weather[0].description.charAt(0).toUpperCase() + info.current.weather[0].description.slice(1),
             lluviaProb: (parseInt(info.daily[0].pop) * 100) + '%',
-            units: 'celsius',
             //info for daily small cards
             dailyInfoObject: info.daily,
             //infor for today's highlights
             highlights: info.current
 
         });
+        setLoading({ state: false })
     }
-    const useGetPosition = (city) => {
+    //----------------------------END OF STATE VARBIABLES----------------------------
+
+
+    const useGetPosition = (city, flag) => {
 
         useEffect(() => {
-            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${keyJson.APIkey}`)
-                .then(result => {
-                    return result.json()
-                })
-                .then(data => {
 
-                    if (data.coord !== undefined) {
-                        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&exclude=${part}&appid=${keyJson.APIkey}&units=${units}`)
-                            .then(answer => { return answer.json() })
-                            .then(info => {
 
-                                updateState(info);
+            if (flag.value === true || cityState.city === '') {
 
-                            })
-                    } else {
-                        alert("You should enter a real city. In any language...")
-                    }
-                })
-        }, [cityState])
+                const success = (pos) => {
+
+                    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${pos.coords.latitude}&lon=${pos.coords.latitude}&exclude=${part}&appid=${keyJson.APIkey}&units=${units.unit}`)
+                        .then(answer => { return answer.json() })
+                        .then(info => {
+
+                            if (info !== undefined) updateState(info);
+
+                        })
+                    setFlag({ value: false });
+                }
+
+                const error = () => {
+                    alert("We can't proceed without your geographic position.")
+                }
+
+                navigator.geolocation.getCurrentPosition(success, error);
+
+
+
+            } else {
+
+                fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${keyJson.APIkey}`)
+                    .then(result => {
+                        return result.json()
+                    })
+                    .then(data => {
+
+                        if (data.coord !== undefined) {
+                            fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&exclude=${part}&appid=${keyJson.APIkey}&units=${units.unit}`)
+                                .then(answer => { return answer.json() })
+                                .then(info => {
+
+                                    if (info !== undefined) updateState(info);
+
+                                })
+                        } else {
+                            alert("You should enter a real city. In any language...")
+                        }
+                    })
+
+            }
+        }, [cityState, units])
+
     }
 
 
-    useGetPosition(cityState.city);
+    useGetPosition(cityState.city, flag); // flag state variable is used to identify initial render
 
-    const updateSearch = (city) => {
 
-        setCityState({ city: city })
-        console.log(cityState.city)
 
-    }
 
     // {    STATE STRUCTURE  ---> JUST FOR INFO  -->> PROPS EQUIVALENT
     //     imgMeteo: '',      ----------------------> props.imgMeteo                 
@@ -106,11 +145,12 @@ const MainPage = () => {
 
 
     return (
+
         <div className="main_container">
 
-            <BigWeatherCard className='left_panel' imgMeteo={state.imgMeteo} tempActual={state.tempActual} day={state.dia} time={state.hora} description={state.description} rainProb={state.lluviaProb} units={state.units} cityName={(city) => updateSearch(city)} ></BigWeatherCard>
+            {loading.state ? <div className='left_panel'><Skeleton animation="wave" variant="rect" width={300} height={733} style={{ borderRadius: '36px 0 0 36px' }} /></div> : <BigWeatherCard className='left_panel' imgMeteo={state.imgMeteo} tempActual={state.tempActual} day={state.dia} time={state.hora} description={state.description} rainProb={state.lluviaProb} units={units.unit} cityName={(city) => setCityState({ city: city })} ></BigWeatherCard>}
 
-            <ComponentWeek className='right_panel' dailyInfo={state.dailyInfoObject} highlights={state.highlights} ></ComponentWeek>
+            {loading.state ? <div className='right_panel'><Skeleton animation="wave" variant="rect" width={800} height={733} style={{ borderRadius: '0 36px 36px 0' }} /></div> : <ComponentWeek className='right_panel' dailyInfo={state.dailyInfoObject} highlights={state.highlights} updateUnit={(unit) => { setUnits({ unit: unit }) }} units={units.unit}></ComponentWeek>}
 
         </div>
     )
