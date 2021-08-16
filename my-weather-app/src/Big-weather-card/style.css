@@ -31,6 +31,7 @@
     background-color:  #F7F6F9;
 }
 
+
 .location-icon{
     padding: 0.2rem;
    border-radius: 50%;
@@ -60,7 +61,7 @@
 }
 .bwc-temp{
     font-size: 58px;
-    font-weight: 100;
+    font-weight: 300;
     color: #1A1A1A;
 }
 .bwc-date{
@@ -68,10 +69,12 @@
     font-size: 18px;
     margin-bottom: 15px;
     color: #1A1A1A;
+    font-weight: 500;
 }
 
 .time{
     color: #CECECE;
+    font-weight: 500;
 }
 
 .bwc-sumary-container{
@@ -87,6 +90,7 @@
 .bwc-sumary{
    padding: 8px;
    color:#1A1A1A;
+   font-size: 11px;
 }
 
 .bwc-rainProb-container{
@@ -95,8 +99,9 @@
 }
 
 .bwc-rainProb{
-    padding: 12px;
+    padding: 8px;
     color:#1A1A1A;
+    font-size: 11px;
 }
 
 .right{

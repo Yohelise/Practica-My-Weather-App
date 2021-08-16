@@ -1,1 +1,5 @@
-
+@font-face { 
+    font-family: 'Roboto';
+    font-weight: "100";
+    src: url("../src/asset/fonts/Roboto-Thin.ttf"); 
+  }
