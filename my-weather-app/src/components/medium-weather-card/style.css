@@ -1,16 +1,14 @@
 .container{
     display: flex;
     flex-direction: column;
-    width: 230.6px;
+    width: 229.6px;
     height: 172px;
     background-color: #FFFFFF;
     border-radius: 20px;
     justify-content: space-between;
-    margin: 0.5rem;
-    
-    
-
+    margin: 0.5rem;  
 }
+
 .card__title{
     color: #CECECE;
     right: 200px;
