@@ -94,7 +94,7 @@ const MainPage = () => {
             imgMeteo: `https://openweathermap.org/img/wn/${info.current.weather[0].icon}@4x.png`,
             tempActual: Math.round(info.current.temp),
             dia: date.toLocaleString('en-us', { weekday: 'short' }),
-            hora: `${date.getHours()}:${date.getMinutes()}`,
+            hora: `${date.getHours()}:${date.getMinutes() > 10 ? date.getMinutes() : '0' + date.getMinutes()}`,
             description: info.current.weather[0].description.charAt(0).toUpperCase() + info.current.weather[0].description.slice(1),
             lluviaProb: (parseInt(info.daily[0].pop) * 100) + '%',
             //info for daily small cards
